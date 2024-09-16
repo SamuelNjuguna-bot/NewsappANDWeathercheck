@@ -1,0 +1,23 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <form method = 'post' action = 'index'>
+    {%csrf_token%}
+    <input type="text" placeholder="search by city or town" name="city">
+    <input type="submit">
+  </form>
+  {%if data.Country_Code%}
+  <p>City:{{city}}</p>
+  <p>Cordinate:{{data.Coordinate}}</p>
+  <p>Temperature:{{data.Temperature}}</p>
+  <p>Pressure:{{data.Pressure}}</p>
+  <p>Humidity:{{data.Humidity}}</p>
+ 
+ {%endif%}
+   
+</body>
+</html>
